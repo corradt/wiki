@@ -5,4 +5,5 @@
    %h6
       published at:
       =article.created_at.strftime('%b,%d,%Y')
-= link_to "New Article",new_article_path
+- if user_signed_in?
+   = link_to "New Article",new_article_path
