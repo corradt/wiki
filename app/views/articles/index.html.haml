@@ -1,9 +1,10 @@
 %h1 Index of Articles
 - @articles.each do |article|
-   %h2= article.title
+   %h2= link_to article.title,article
    %p= truncate(article.content, length: 200) 
    %h6
       published at:
       =article.created_at.strftime('%b,%d,%Y')
+   
 - if user_signed_in?
    = link_to "New Article",new_article_path
